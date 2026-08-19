@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anti.yabloko.com.ru/sitemap.xml
