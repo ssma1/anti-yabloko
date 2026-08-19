@@ -19,9 +19,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="/manifest.json">
 
-    <!-- Ундексация роботами (Google, Яндекс) -->
+    <!-- Индексация роботами (Google, Яндекс) -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="yandex" content="index, follow">
@@ -53,7 +53,7 @@
     <meta name="twitter:description" content="Разбор истории партии, ее идеологии, иностранного финансирования и причин отмены регистрации на выборах 2026 года.">
     <meta name="twitter:image" content="https://i.ibb.co/yFGKbxF1/2900-20260814161720.png">
 
-    <!-- Микроразметка Schema.org для Google и Яндекса (Задаёт имя бренда «Анти-Яблоко») -->
+    <!-- Микроразметка Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -629,6 +629,28 @@
             margin-bottom: 6px;
         }
 
+        .link-list {
+            list-style: none !important;
+            margin-left: 0 !important;
+        }
+
+        .link-list li {
+            margin-bottom: 10px !important;
+        }
+
+        .link-list a {
+            color: var(--ssba-red);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .link-list a:hover {
+            text-decoration: underline;
+        }
+
         footer {
             background-color: var(--card-bg);
             border-top: 1px solid var(--border-color);
@@ -762,6 +784,8 @@
                 <div class="dropdown-menu" id="dotsDropdown">
                     <button onclick="openModal('modalFull')"><i class="fa-solid fa-file-alt"></i> Читать всю статью</button>
                     <button onclick="openModal('modalSsba')"><i class="fa-solid fa-bullhorn"></i> Заявление ССБА</button>
+                    <button onclick="openModal('modalAboutSsba')"><i class="fa-solid fa-users"></i> О формации ССБА</button>
+                    <button onclick="openModal('modalLinks')"><i class="fa-solid fa-up-right-from-square"></i> Источники и тейки</button>
                     <button onclick="toggleFontSize()"><i class="fa-solid fa-font"></i> Изменить шрифт</button>
                     <button onclick="copyPageUrl()"><i class="fa-solid fa-link"></i> Скопировать ссылку</button>
                 </div>
@@ -790,9 +814,9 @@
                 <div class="support-badge">
                     <i class="fa-solid fa-circle-check"></i> Официальный архив
                 </div>
-                <div class="support-title">Поддержка и сопровождение ресурса</div>
+                <div class="support-title">Поддержка ресурса</div>
                 <div class="support-desc">
-                    Данный информационно-аналитический портал поддерживается и администрируется при содействии движения «Скинхеды-Сталинисты Боевые Антифашисты» (ССБА).
+                    Данный информационно-аналитический портал поддерживается при содействии формации «Скинхеды-Сталинисты Боевые Антифашисты» (ССБА).
                 </div>
                 <a href="https://t.me/StalinHead" target="_blank" class="ssba-btn">
                     <i class="fa-brands fa-telegram"></i> Подписаться на канал ССБА
@@ -879,7 +903,8 @@
                     <li><strong>Нарушение авторских прав:</strong> Использование в агитационных материалах советских песен без должного оформления прав.</li>
                     <li><strong>Превышение лимитов:</strong> Нарушение установленных порогов на рекламу в социальных сетях.</li>
                 </ul>
-                <p>Верховный суд признал требования обоснованными и отменил регистрацию партии на выборах. Юристы партии пытались назвать это «политическим решением», однако факты нарушений законодательства были подтверждены официальными ведомствами.</p>
+                <p>Верховный суд признал требования обоснованными и отменил регистрацию партии на выборах.</p>
+                <p><a href="#" onclick="closeModal('modalSection1'); openModal('modalLinks'); return false;" style="color: var(--accent-red); font-weight:600;"><i class="fa-solid fa-link"></i> Посмотреть ссылки на судебные материалы</a></p>
             </div>
         </div>
     </div>
@@ -891,10 +916,10 @@
                 <h3>Иностранный фактор и финансирование</h3>
             </div>
             <div class="modal-body">
-                <p>По данным Росфинмониторинга, партия «Яблоко» через посреднические структуры получила из США и Германии суммы в размере 16 900 рублей (около 1500 долларов США) на свою предвыборную кампанию.</p>
+                <p>По данным Росфинмониторинга, партия «Яблоко» через посреднические структуры получила из США и Германии суммы в размере 16 900 рублей на свою предвыборную кампанию.</p>
                 <p>Согласно российскому законодательству, любое привлечение иностранных средств в избирательные кампании прямо запрещено.</p>
                 <h4>Геополитический аспект:</h4>
-                <p>Предвыборная программа «За мир и свободу» и риторика Николая Рыбакова объективно совпадают с геополитическими интересами западных стран. На Западе «Яблоко» открыто называют «единственной либеральной надеждой», что еще раз подтверждает её функцию как внешнего агента влияния.</p>
+                <p>Предвыборная программа «За мир и свободу» и риторика Николая Рыбакова объективно совпадают с геополитическими интересами западных стран.</p>
             </div>
         </div>
     </div>
@@ -908,7 +933,6 @@
             <div class="modal-body">
                 <p>Основанная в 1993 году Григорием Явлинским, Владимиром Лукиным и Юрием Болдыревым, партия позиционирует себя как социал-либеральную.</p>
                 <p>Однако экономический план Явлинского «500 дней» (1990 г.) предполагал шоковую капитализацию экономики. С марксистско-ленинской точки зрения «Яблоко» отстаивает священность частной собственности и интересы крупного капитала.</p>
-                <p>Защищая абстрактные «права человека», партия полностью игнорирует базовые права трудящихся — право на труд, социальную защиту и доступное жилье.</p>
             </div>
         </div>
     </div>
@@ -921,7 +945,7 @@
             </div>
             <div class="modal-body">
                 <p>Электоральная база «Яблока» — это городская интеллигенция и прозападная буржуазия. Партия никогда не пользовалась поддержкой рабочих и жителей провинции.</p>
-                <p>С 2003 года партия не способна преодолеть избирательный барьер в Государственную Думу, а её реальный рейтинг колеблется в районе 2%, что превращает ее из полноценной партии в узкий маргинальный проект.</p>
+                <p>С 2003 года партия не способна преодолеть избирательный барьер в Государственную Думу, а её реальный рейтинг колеблется в районе 2%.</p>
             </div>
         </div>
     </div>
@@ -933,7 +957,7 @@
                 <h3>Заявление ССБА</h3>
             </div>
             <div class="modal-body">
-                <p><strong>Движение «Скинхеды-Сталинисты Боевые Антифашисты» (ССБА) заявляет:</strong></p>
+                <p><strong>Формация «Скинхеды-Сталинисты Боевые Антифашисты» (ССБА) заявляет:</strong></p>
                 <ul>
                     <li>Мы не поддерживаем «Яблоко» и не считаем его союзником. Это буржуазная партия, чуждая интересам рабочего класса.</li>
                     <li>Мы осуждаем иностранное финансирование политических структур и считаем его инструментом внешнего давления.</li>
@@ -942,6 +966,51 @@
                 <p style="text-align: center; font-weight: bold; margin-top: 15px; color: var(--accent-red);">
                     Пролетарии всех стран, соединяйтесь!<br>Смерть фашизму! Свободу народу!
                 </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalAboutSsba">
+        <div class="modal-window">
+            <button class="modal-close" onclick="closeModal('modalAboutSsba')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h3>О формации ССБА</h3>
+            </div>
+            <div class="modal-body">
+                <p><strong>Скинхеды-Сталинисты Боевые Антифашисты (ССБА)</strong> — это политическая формация, стоящая на позициях марксизма-ленинизма и сталинской теории классовой борьбы.</p>
+                <h4>Основные принципы ССБА:</h4>
+                <ul>
+                    <li><strong>Бескомпромиссный антифашизм:</strong> Физическое и идеологическое противостояние ультраправым течениям.</li>
+                    <li><strong>Классовый подход:</strong> Защита интересов трудового народа от посягательств как олигархического капитала, так и прозападных либеральных партий.</li>
+                    <li><strong>Идеологическая гигиена:</strong> Разоблачение либеральных мифов и псевдолевых проектов.</li>
+                </ul>
+                <p>Официальный Telegram-канал ССБА: <a href="https://t.me/StalinHead" target="_blank" style="color: var(--accent-red); font-weight:600;">@StalinHead</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalLinks">
+        <div class="modal-window">
+            <button class="modal-close" onclick="closeModal('modalLinks')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <h3>Источники, тейки и судебные решения</h3>
+            </div>
+            <div class="modal-body">
+                <p>Официальные ссылки и доказательства, подтверждающие тезисы расследования:</p>
+                <ul class="link-list">
+                    <li>
+                        <i class="fa-solid fa-gavel" style="color: var(--ssba-red);"></i>
+                        <a href="https://vsrf.ru/" target="_blank" rel="noopener">Иск партии «Родина» в Верховный Суд РФ о снятии «Яблока» с выборов (2026)</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-building-columns" style="color: var(--ssba-red);"></i>
+                        <a href="https://fedsfm.ru/" target="_blank" rel="noopener">Отчёт и данные Росфинмониторинга о зарубежных траншах из США и Германии</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bullhorn" style="color: var(--ssba-red);"></i>
+                        <a href="https://t.me/StalinHead" target="_blank" rel="noopener">Официальные заявления и публикация материалов ССБА в Telegram</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -986,14 +1055,15 @@
                     <li><a href="#" onclick="openModal('modalSection1'); return false;"><i class="fa-solid fa-angle-right"></i> Судебный иск 2026</a></li>
                     <li><a href="#" onclick="openModal('modalSection2'); return false;"><i class="fa-solid fa-angle-right"></i> Финансовые транши</a></li>
                     <li><a href="#" onclick="openModal('modalSection3'); return false;"><i class="fa-solid fa-angle-right"></i> Классовый анализ</a></li>
+                    <li><a href="#" onclick="openModal('modalLinks'); return false;"><i class="fa-solid fa-angle-right"></i> Ссылки и источники</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Документы ССБА</h4>
+                <h4>Документы и ССБА</h4>
                 <ul>
-                    <li><a href="#" onclick="openModal('modalSsba'); return false;"><i class="fa-solid fa-shield"></i> Резолюция ССБА</a></li>
-                    <li><a href="#" onclick="openModal('modalFull'); return false;"><i class="fa-solid fa-file-text"></i> Полная статья</a></li>
+                    <li><a href="#" onclick="openModal('modalSsba'); return false;"><i class="fa-solid fa-shield"></i> Заявление ССБА</a></li>
+                    <li><a href="#" onclick="openModal('modalAboutSsba'); return false;"><i class="fa-solid fa-users"></i> Статья о ССБА</a></li>
                 </ul>
             </div>
 
